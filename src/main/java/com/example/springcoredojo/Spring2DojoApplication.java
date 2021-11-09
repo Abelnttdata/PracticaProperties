@@ -3,6 +3,8 @@ package com.example.springcoredojo;
 
 import com.example.springcoredojo.autowired.Joke;
 import com.example.springcoredojo.entidades.Jugador;
+import com.example.springcoredojo.qualifer.Vehiculo;
+import com.example.springcoredojo.qualifer.VehiculoServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -27,6 +29,10 @@ public class Spring2DojoApplication {
 			//LLamada al autowired
 			Joke joke = ctx.getBean(Joke.class);
 			System.out.println(joke.lineFromJoke());
+
+			//Ejemplo  de @Qualifer
+			VehiculoServicio vehiculoServicio = ctx.getBean(VehiculoServicio.class);
+			System.out.println(vehiculoServicio.getClass().getName() + vehiculoServicio.getVehiculo().cantRuedas());
 		};
 	}
 
